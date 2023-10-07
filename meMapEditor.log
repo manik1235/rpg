@@ -3,3 +3,47 @@ Line 66: Class MSComctlLib.StatusBar of control StatusBar1 was not a loaded cont
 Line 90: Class MSComctlLib.ImageList of control ImageList was not a loaded control class.
 Line 99: Class MSComctlLib.ImageList of control ImageList3 was not a loaded control class.
 Line 452: Class MSComDlg.CommonDialog of control ComDialog was not a loaded control class.
+Line 23: The property name _ExtentX in Toolbar1 is invalid.
+Line 24: The property name _ExtentY in Toolbar1 is invalid.
+Line 25: The property name ButtonWidth in Toolbar1 is invalid.
+Line 26: The property name ButtonHeight in Toolbar1 is invalid.
+Line 28: The property name _Version in Toolbar1 is invalid.
+Line 63: The property name Buttons in Toolbar1 is invalid.
+Line 73: The property name _ExtentX in StatusBar1 is invalid.
+Line 74: The property name _ExtentY in StatusBar1 is invalid.
+Line 75: The property name _Version in StatusBar1 is invalid.
+Line 88: The property name Panels in StatusBar1 is invalid.
+Line 93: The property name _ExtentX in ImageList is invalid.
+Line 94: The property name _ExtentY in ImageList is invalid.
+Line 96: The property name MaskColor in ImageList is invalid.
+Line 97: The property name _Version in ImageList is invalid.
+Line 102: The property name _ExtentX in ImageList3 is invalid.
+Line 103: The property name _ExtentY in ImageList3 is invalid.
+Line 105: The property name MaskColor in ImageList3 is invalid.
+Line 106: The property name _Version in ImageList3 is invalid.
+Line 455: The property name _ExtentX in ComDialog is invalid.
+Line 456: The property name _ExtentY in ComDialog is invalid.
+Line 457: The property name _Version in ComDialog is invalid.
+Line 458: The property name CancelError in ComDialog is invalid.
+Line 23: The property name _ExtentX in Toolbar1 is invalid.
+Line 24: The property name _ExtentY in Toolbar1 is invalid.
+Line 25: The property name ButtonWidth in Toolbar1 is invalid.
+Line 26: The property name ButtonHeight in Toolbar1 is invalid.
+Line 28: The property name _Version in Toolbar1 is invalid.
+Line 63: The property name Buttons in Toolbar1 is invalid.
+Line 73: The property name _ExtentX in StatusBar1 is invalid.
+Line 74: The property name _ExtentY in StatusBar1 is invalid.
+Line 75: The property name _Version in StatusBar1 is invalid.
+Line 88: The property name Panels in StatusBar1 is invalid.
+Line 93: The property name _ExtentX in ImageList is invalid.
+Line 94: The property name _ExtentY in ImageList is invalid.
+Line 96: The property name MaskColor in ImageList is invalid.
+Line 97: The property name _Version in ImageList is invalid.
+Line 102: The property name _ExtentX in ImageList3 is invalid.
+Line 103: The property name _ExtentY in ImageList3 is invalid.
+Line 105: The property name MaskColor in ImageList3 is invalid.
+Line 106: The property name _Version in ImageList3 is invalid.
+Line 455: The property name _ExtentX in ComDialog is invalid.
+Line 456: The property name _ExtentY in ComDialog is invalid.
+Line 457: The property name _Version in ComDialog is invalid.
+Line 458: The property name CancelError in ComDialog is invalid.

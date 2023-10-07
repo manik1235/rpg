@@ -1,6 +1,4 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form MapEdit 
    Caption         =   "RPG Map Editor"
    ClientHeight    =   9270
@@ -13,97 +11,45 @@ Begin VB.Form MapEdit
    ScaleHeight     =   9270
    ScaleWidth      =   11385
    Visible         =   0   'False
-   Begin MSComctlLib.Toolbar Toolbar1 
+   Begin VB.PictureBox Toolbar1 
       Align           =   1  'Align Top
       Height          =   420
       Left            =   0
+      ScaleHeight     =   360
+      ScaleWidth      =   11325
       TabIndex        =   22
       Top             =   0
       Width           =   11385
-      _ExtentX        =   20082
-      _ExtentY        =   741
-      ButtonWidth     =   609
-      ButtonHeight    =   582
-      Appearance      =   1
-      _Version        =   393216
-      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
-         NumButtons      =   11
-         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   3
-         EndProperty
-         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   1
-         EndProperty
-         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   3
-         EndProperty
-         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   2
-            Value           =   1
-         EndProperty
-         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   2
-         EndProperty
-         BeginProperty Button9 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   2
-         EndProperty
-         BeginProperty Button10 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   3
-         EndProperty
-         BeginProperty Button11 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Style           =   1
-            Value           =   1
-         EndProperty
-      EndProperty
-      BorderStyle     =   1
    End
-   Begin MSComctlLib.StatusBar StatusBar1 
+   Begin VB.PictureBox StatusBar1 
       Align           =   2  'Align Bottom
       Height          =   375
       Left            =   0
+      ScaleHeight     =   315
+      ScaleWidth      =   11325
       TabIndex        =   21
       Top             =   8895
       Width           =   11385
-      _ExtentX        =   20082
-      _ExtentY        =   661
-      _Version        =   393216
-      BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
-         NumPanels       =   5
-         BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Panel4 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-         EndProperty
-         BeginProperty Panel5 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-         EndProperty
-      EndProperty
    End
-   Begin MSComctlLib.ImageList ImageList 
+   Begin VB.PictureBox ImageList 
+      BackColor       =   &H80000005&
+      Height          =   480
       Left            =   4560
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   25
       Top             =   6240
-      _ExtentX        =   1005
-      _ExtentY        =   1005
-      BackColor       =   -2147483643
-      MaskColor       =   12632256
-      _Version        =   393216
+      Width           =   1200
    End
-   Begin MSComctlLib.ImageList ImageList3 
+   Begin VB.PictureBox ImageList3 
+      BackColor       =   &H80000005&
+      Height          =   480
       Left            =   3360
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   26
       Top             =   6240
-      _ExtentX        =   1005
-      _ExtentY        =   1005
-      BackColor       =   -2147483643
-      MaskColor       =   12632256
-      _Version        =   393216
+      Width           =   1200
    End
    Begin VB.PictureBox CurTile 
       AutoRedraw      =   -1  'True
@@ -449,13 +395,14 @@ Begin VB.Form MapEdit
          End
       End
    End
-   Begin MSComDlg.CommonDialog ComDialog 
+   Begin VB.PictureBox ComDialog 
+      Height          =   480
       Left            =   2040
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   27
       Top             =   5520
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
-      CancelError     =   -1  'True
+      Width           =   1200
    End
    Begin VB.PictureBox TempPic 
       AutoRedraw      =   -1  'True
@@ -866,7 +813,8 @@ End If
 End Sub
 
 Private Sub ContainPic_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-On Error GoTo errh
+'On Error GoTo errh
+On Error Resume Next
 
   Dim rc
   Dim tmpTexture As String
@@ -984,11 +932,11 @@ On Error GoTo errh
       ' Erase, place the default tile
       Tile.XY(pX(X), pY(Y)).Tag = DrawMask(X, Y, EraseTile.Tag, "", "")
       ' Depress the erase button
-      Toolbar1.Buttons(5).Value = tbrPressed
+      'Toolbar1.Buttons(5).Value = tbrPressed
     ElseIf Button = 1 And (Shift = 1 Or Shift = 3) Then
       If Shift = 3 Then
         ' Depress the erase button
-        Toolbar1.Buttons(5).Value = tbrPressed
+        'Toolbar1.Buttons(5).Value = tbrPressed
       End If
       ' Fills in the rectangle with that texture
       If Not AmSelecting Then
@@ -1065,13 +1013,13 @@ On Error GoTo errh
   sSel.Top = Int(Y / Tile.PixelHeight) * Tile.PixelHeight
   
   'The X,Y position (blocks)
-  StatusBar1.Panels(1).Text = Int(X / Tile.PixelWidth) & "," & Int(Y / Tile.PixelHeight)
+  'StatusBar1.Panels(1).Text = Int(X / Tile.PixelWidth) & "," & Int(Y / Tile.PixelHeight)
   'Shows if there is a special tile
-  StatusBar1.Panels(2).Text = Tile.XY(pX(X), pY(Y)).SpecialTile
+  'StatusBar1.Panels(2).Text = Tile.XY(pX(X), pY(Y)).SpecialTile
   'shows the tile code
-  StatusBar1.Panels(4).Text = Tile.XY(pX(X), pY(Y)).Tag
+  'StatusBar1.Panels(4).Text = Tile.XY(pX(X), pY(Y)).Tag
   If RightClick = False And Button = 0 And Shift = 0 And Left(Tile.XY(pX(X), pY(Y)).SpecialTile, 7) = "Monster" And Not SetBounds Then
-      StatusBar1.Panels(3).Text = Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MinX & "," & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MinY & "-" & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MaxX & "," & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MaxY
+      'StatusBar1.Panels(3).Text = Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MinX & "," & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MinY & "-" & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MaxX & "," & Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MaxY
       Outline2(0).FillStyle = 5 'Downward Diagonal lines
       Outline2(0).Visible = True
       Outline2(0).Left = Monster(Val(Mid(Tile.XY(pX(X), pY(Y)).SpecialTile, 10))).MinX * Tile.PixelWidth
@@ -1090,7 +1038,7 @@ On Error GoTo errh
       Outline2(0).Width = Outline2(1).Width
       Outline2(0).Height = Outline2(1).Height
       Outline2(1).Visible = False
-      StatusBar1.Panels(3).Text = ""
+      'StatusBar1.Panels(3).Text = ""
     End If
   End If
   ContainPic_MouseDown Button, Shift, X, Y
@@ -1120,7 +1068,7 @@ Dim ThisTile As String
 
 If Shift = 2 Or Shift = 3 Then
   ' unpress the erase button
-  Toolbar1.Buttons(5).Value = tbrUnpressed
+  'Toolbar1.Buttons(5).Value = tbrUnpressed
 End If
 
 If Button = 1 And (Shift = 1 Or Shift = 3) Then
@@ -2085,7 +2033,7 @@ End Sub
 
 
 
-Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
+Private Sub Toolbar1_ButtonClick(ByVal Button)
 On Error GoTo errh
 
 If Button.ToolTipText = "Terrain" Then
@@ -2197,13 +2145,13 @@ For Y = 1 To MapY
       rc = BitBlt(ContainPic.hDC, X * Tile.PixelWidth - Tile.PixelWidth, Y * Tile.PixelHeight - Tile.PixelHeight, Tile.TwipWidth, Tile.TwipHeight, Tilefrm.BaseTerrain((InStr(TagStringB, CurTile.Tag) - 1) / 4).hDC, 0, 0, SRCCOPY)
       Tile.XY(X, Y).Tag = CurTile.Tag
     End If
-    StatusBar1.Panels(4).Text = "Loading" & " [" & FileName & ".rpg" & "] - "
-    StatusBar1.Panels(5).Text = LTrim(RTrim(Str(Int(((c / (MapX * MapY)) * 100))))) & "% Done"
+    'StatusBar1.Panels(4).Text = "Loading" & " [" & FileName & ".rpg" & "] - "
+    'StatusBar1.Panels(5).Text = LTrim(RTrim(Str(Int(((c / (MapX * MapY)) * 100))))) & "% Done"
   Next X
 Next Y
 If LoadMap Then Close #FileHandle
-StatusBar1.Panels(4).Text = "Done"
-StatusBar1.Panels(5).Text = ""
+'StatusBar1.Panels(4).Text = "Done"
+'StatusBar1.Panels(5).Text = ""
 On Error GoTo 0
 
 
@@ -3271,17 +3219,17 @@ Dim c1 As Integer
 
 
 ' Create the Toolbar
-Toolbar1.ImageList = ImageList
+'Toolbar1.ImageList = ImageList
 
 c = 0
 'count thru each button, but only increment an extra c if its a separator
-For c1 = 1 To Toolbar1.Buttons.Count
-  If Toolbar1.Buttons(c1).Style = 3 Then
+For c1 = 1 To 0 'Toolbar1.Buttons.Count
+  If True Then ' Toolbar1.Buttons(c1).Style = 3 Then
     c1 = c1 + 1 'separator
   End If
   c = c + 1
-  Toolbar1.Buttons(c1).ToolTipText = ImageList.ListImages(c).Tag
-  Toolbar1.Buttons(c1).Image = c
+  'Toolbar1.Buttons(c1).ToolTipText = ImageList.ListImages(c).Tag
+  'Toolbar1.Buttons(c1).Image = c
 Next c1
 
 ' Click the first button
@@ -3300,8 +3248,8 @@ On Error GoTo errh
 Tilefrm.File1 = App.Path & "\Bitmaps\Toolbar\"
 
 For c = 1 To Tilefrm.File1.ListCount
-  ImageList.ListImages.Add c, "", LoadPicture(App.Path & "\Bitmaps\Toolbar\" & Tilefrm.File1.List(c - 1))
-  ImageList.ListImages(c).Tag = Mid(Tilefrm.File1.List(c - 1), 3, Len(Tilefrm.File1.List(c - 1)) - 6)
+  'ImageList.ListImages.Add c, "", LoadPicture(App.Path & "\Bitmaps\Toolbar\" & Tilefrm.File1.List(c - 1))
+  'ImageList.ListImages(c).Tag = Mid(Tilefrm.File1.List(c - 1), 3, Len(Tilefrm.File1.List(c - 1)) - 6)
 Next c
 
 

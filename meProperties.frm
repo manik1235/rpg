@@ -1,5 +1,4 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.ocx"
 Begin VB.Form Properties 
    Caption         =   "Properties"
    ClientHeight    =   6270
@@ -35,51 +34,14 @@ Begin VB.Form Properties
       Top             =   5880
       Width           =   1095
    End
-   Begin TabDlg.SSTab SSTab1 
+   Begin VB.PictureBox SSTab1 
       Height          =   5775
       Left            =   0
+      ScaleHeight     =   5715
+      ScaleWidth      =   6795
       TabIndex        =   0
       Top             =   0
       Width           =   6855
-      _ExtentX        =   12091
-      _ExtentY        =   10186
-      _Version        =   393216
-      Tabs            =   4
-      Tab             =   1
-      TabsPerRow      =   4
-      TabHeight       =   520
-      TabCaption(0)   =   "Map"
-      TabPicture(0)   =   "meProperties.frx":0000
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Label1"
-      Tab(0).Control(1)=   "Label2"
-      Tab(0).Control(2)=   "Label3"
-      Tab(0).Control(3)=   "Label4"
-      Tab(0).Control(4)=   "Label5"
-      Tab(0).Control(5)=   "lblMapSize"
-      Tab(0).Control(6)=   "lblNumPlayers"
-      Tab(0).Control(7)=   "lblNumMonsters"
-      Tab(0).Control(8)=   "MapName"
-      Tab(0).Control(9)=   "MapDesc"
-      Tab(0).ControlCount=   10
-      TabCaption(1)   =   "Player"
-      TabPicture(1)   =   "meProperties.frx":001C
-      Tab(1).ControlEnabled=   -1  'True
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Frame2"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).ControlCount=   2
-      TabCaption(2)   =   "Monster"
-      TabPicture(2)   =   "meProperties.frx":0038
-      Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame4"
-      Tab(2).Control(1)=   "Frame3"
-      Tab(2).ControlCount=   2
-      TabCaption(3)   =   "Events"
-      TabPicture(3)   =   "meProperties.frx":0054
-      Tab(3).ControlEnabled=   0   'False
-      Tab(3).ControlCount=   0
       Begin VB.Frame Frame4 
          Caption         =   "Monster Properties"
          Height          =   4455
