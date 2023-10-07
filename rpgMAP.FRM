@@ -1,5 +1,4 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Map 
    Appearance      =   0  'Flat
    BackColor       =   &H00C0C0C0&
@@ -25,12 +24,14 @@ Begin VB.Form Map
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   11055
    ScaleWidth      =   9420
-   Begin MSComDlg.CommonDialog ComDialog 
+   Begin VB.PictureBox ComDialog 
+      Height          =   480
       Left            =   600
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   11
       Top             =   5400
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
+      Width           =   1200
    End
    Begin VB.CommandButton ExitButton 
       Appearance      =   0  'Flat
@@ -1583,14 +1584,15 @@ Dim c
 On Error GoTo errh
 Dim cutfile As Integer ' This stores where the last \ is
 Dim cutfile2 As Integer ' This is a temp storage
-ComDialog.Filter = "RPG Level Files (.rpg)|*.rpg|All Files|*.*"
-ComDialog.InitDir = App.Path & "\maps\"
-ComDialog.ShowOpen
-If ComDialog.filename = "" Then
-  Exit Sub
-Else
-  MapName = ComDialog.filename
-End If
+'ComDialog.Filter = "RPG Level Files (.rpg)|*.rpg|All Files|*.*"
+'ComDialog.InitDir = App.Path & "\maps\"
+'ComDialog.ShowOpen
+'If ComDialog.filename = "" Then
+'  Exit Sub
+'Else
+'  MapName = ComDialog.filename
+'End If
+MapName = App.Path & "\maps\" & "arthur.rpg"
 If Mid(MapName, Len(MapName) - 3, 1) = "." Then
   MapName = Mid(MapName, 1, Len(MapName) - 4)
 End If
