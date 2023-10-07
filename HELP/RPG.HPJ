@@ -1,0 +1,16 @@
+[Options]
+ROOT = \waite\baog\rpg\help
+BMROOT = \waite\baog\rpg\help
+Compress = 0               ; 0 = Do not compress
+Warning = 3                ; 3 = Report all errors
+Report = 1                 ; 1 = Report progress of compile
+Title = RPG Help;       ; Set title for help file
+
+[Files]
+rpg.rtf
+
+[WINDOWS]
+main = "RPG Help", (16,16,768,960),,,(192,192,192)
+
+[CONFIG]
+BrowseButtons()
