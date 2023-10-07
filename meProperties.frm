@@ -595,14 +595,14 @@ Option Explicit
 Private Sub btnApply_Click()
 On Error GoTo errh
 ' Apply will only save what is on the current tab
-If SSTab1.Tab = 0 Then
+'If SSTab1.Tab = 0 Then
   'Map Properties
   MapEdit.MapName = Properties.MapName
   MapEdit.MapDesc = Properties.MapDesc
   MapEdit.Form_Resize
-ElseIf SSTab1.Tab = 1 Then
+'ElseIf SSTab1.Tab = 1 Then
   'Player Properties
-End If
+'End If
 
 Exit Sub
 errh:

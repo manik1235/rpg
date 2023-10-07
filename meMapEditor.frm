@@ -797,9 +797,9 @@ End Sub
 Private Sub ContainPic_KeyDown(KeyCode As Integer, Shift As Integer)
 ' Depress the erase button if ctrl is pressed
 If Shift = 2 Or Shift = 3 Then
-  Toolbar1.Buttons(5).Value = tbrPressed
+  'Toolbar1.Buttons(5).Value = tbrPressed
 Else
-  Toolbar1.Buttons(5).Value = tbrUnpressed
+  'Toolbar1.Buttons(5).Value = tbrUnpressed
 End If
 End Sub
 
@@ -1407,7 +1407,7 @@ For c = -d To d
           CurTile.Picture = Tilefrm.Terrain(TerrainVal(Right(listTiles.List(listTiles.ListIndex), 4), TagString) + c).Picture
           CurTile.Tag = Tilefrm.Terrain(TerrainVal(Right(listTiles.List(listTiles.ListIndex), 4), TagString) + c).Tag
         End If
-        imgCurTile(d + c).Picture = Tilefrm.Terrain(TerrainVal(Right(listTiles.List(listTiles.ListIndex), 4), TagString) + c).Picture
+        'imgCurTile(d + c).Picture = Tilefrm.Terrain(TerrainVal(Right(listTiles.List(listTiles.ListIndex), 4), TagString) + c).Picture
       Case Else
         If c = 0 Then
           ' sets the current tile if it is the center image
@@ -1721,16 +1721,16 @@ End Sub
 Private Sub mnuProperties_Click(Index As Integer)
 JustSaved = False
 Properties.Show
-Properties.SSTab1.Tab = Index
+'Properties.SSTab1.Tab = Index
 End Sub
 
 
 
 Private Sub mnuSave_Click()
-If Not TotalPlayers >= 0 Then
-  R = MsgBox("You must have a Player 0.", vbCritical, "No Player 0")
-  Exit Sub
-End If
+'If Not TotalPlayers >= 0 Then
+'  R = MsgBox("You must have a Player 0.", vbCritical, "No Player 0")
+'  Exit Sub
+'End If
 On Error GoTo errh
 If Not mnuSave.Enabled Then Exit Sub
 If (FileName = "Untitled" And FirstSave) Or FirstSave Then
@@ -1896,15 +1896,17 @@ Private Sub mnuSaveAs_Click()
 On Error GoTo errh
 Dim cutfile As Integer
 Dim cutfile2 As Integer
-ComDialog.FileName = FileName
-ComDialog.Filter = "RPG Maps (.rpg)|*.rpg"
-ComDialog.InitDir = App.Path & "\maps\"
-ComDialog.CancelError = True
-ComDialog.ShowSave
+'ComDialog.FileName = FileName
+'ComDialog.Filter = "RPG Maps (.rpg)|*.rpg"
+'ComDialog.InitDir = App.Path & "\maps\"
+'ComDialog.CancelError = True
+'ComDialog.ShowSave
+
 
 
 FirstSave = False
-FileName = ComDialog.FileName
+'FileName = ComDialog.FileName
+FileName = App.Path & "\maps\" & "arthur.rpg"
 'This finds and separates the name from path
 cutfile = 0
 cutfile2 = 1
@@ -2004,10 +2006,10 @@ For c = 0 To listTiles.ListCount - 1
   End If
 Next c
 'Press the Tiles toolbar button
-Toolbar1.Buttons(7).Value = tbrPressed
-Toolbar1.Buttons(8).Value = tbrUnpressed
-Toolbar1.Buttons(9).Value = tbrUnpressed
-Toolbar1_ButtonClick Toolbar1.Buttons(7)
+'Toolbar1.Buttons(7).Value = tbrPressed
+'Toolbar1.Buttons(8).Value = tbrUnpressed
+'Toolbar1.Buttons(9).Value = tbrUnpressed
+'Toolbar1_ButtonClick Toolbar1.Buttons(7)
 End Sub
 
 Private Sub mnuWeapon_Click(Index As Integer)
